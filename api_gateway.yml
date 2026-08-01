@@ -14,4 +14,4 @@ spring:
       routes[0]:
         id: auth_service
         uri: lb://auth_service
-        predicates[0]: Path=/api/auth/**
+        predicates[0]: Path=/api/v1/auth/**
