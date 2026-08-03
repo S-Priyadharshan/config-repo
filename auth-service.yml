@@ -25,6 +25,12 @@ spring:
         jwt:
           issuer-uri: http://localhost:9090/realms/TradeHub
 
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.JsonSerializer
+
 eureka:
   client:
     service-url:
