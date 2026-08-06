@@ -26,6 +26,7 @@ spring:
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       properties:
         spring.json.trusted.packages: com.pd.*
+        spring.json.use.type.headers: false
 
 eureka:
   client:
