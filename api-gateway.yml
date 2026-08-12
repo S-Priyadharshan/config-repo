@@ -21,6 +21,11 @@ spring:
           uri: lb://user-service
           predicates:
             - Path=/api/v1/user/**
+
+        - id: market_service
+          uri:: lb://market-service
+          predicates:
+            - Path=/api/v1/market/**
             
       discovery:
         locator:
