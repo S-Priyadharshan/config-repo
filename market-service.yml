@@ -18,6 +18,34 @@ eureka:
   instance:
     prefer-ip-address: true
 
+resilience4j:
+  circuitbreaker:
+    instances:
+      finnhub:
+        sliding-window-type: COUNT_BASED
+        sliding-window-size: 10
+        minimum-number-of-calls: 5
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 30s
+        permitted-number-of-calls-in-half-open-state: 3
+        automatic-transition-from-open-to-half-open-enabled: true
+        
+  retry:
+    instances:
+      finnhub:
+        max-attempts: 3
+        wait-duration: 500ms
+        retry-exceptions:
+          - java.io.IOException
+          - org.springframework.web.client.ResourceAccessException
+          
+  ratelimiter:
+    instances:
+      finnhub:
+        limit-for-period: 55
+        limit-refresh-period: 1m
+        timeout-duration: 2s
+
 logging:
   level:
     org.springframework.security: TRACE
