@@ -47,7 +47,6 @@ resilience4j:
       finnhub:
         limit-for-period: 55
         limit-refresh-period: 1m
-        timeout-duration: 2s
 
 logging:
   level:
