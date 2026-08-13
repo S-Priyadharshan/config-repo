@@ -9,6 +9,9 @@ eureka:
     fetch-registry: true
 
 spring:
+  threads:
+    virtual:
+      enabled: true
   cloud:
     gateway:
       routes:
