@@ -4,6 +4,9 @@ server:
 spring:
   application:
     name: market-service
+  threads:
+    virtual:
+      enabled: true
   cache:
     type: redis
   data:
