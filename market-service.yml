@@ -47,6 +47,10 @@ resilience4j:
       finnhub:
         limit-for-period: 55
         limit-refresh-period: 1m
+      alphaVantage:
+        limit-for-period: 2
+        limit-refresh-period: 1m
+        timeout-duration: 0
 
 logging:
   level:
