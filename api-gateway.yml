@@ -29,6 +29,11 @@ spring:
           uri:: lb://market-service
           predicates:
             - Path=/api/v1/market/**
+        
+        - id: portfolio_service
+          uri:: lb://portfolio-service
+          predicates:
+            - Path=/api/v1/portfolio/**
             
       discovery:
         locator:
